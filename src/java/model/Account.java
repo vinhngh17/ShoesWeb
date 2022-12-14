@@ -13,15 +13,19 @@ public class Account {
     private int id;
     private String user;
     private String pass;
+    private String name;
+    private String phone;
     private int isAdmin;
     
     public Account() {
     }
 
-    public Account(int id, String user, String pass, int isAdmin) {
+    public Account(int id, String user, String pass, String name, String phone, int isAdmin) {
         this.id = id;
         this.user = user;
         this.pass = pass;
+        this.name = name;
+        this.phone = phone;
         this.isAdmin = isAdmin;
     }
 
@@ -56,5 +60,23 @@ public class Account {
     public void setIsAdmin(int isAdmin) {
         this.isAdmin = isAdmin;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    
 
 }

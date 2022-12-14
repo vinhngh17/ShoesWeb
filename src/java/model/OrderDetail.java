@@ -12,16 +12,10 @@ package model;
 public class OrderDetail {
     private int oid, pid;
     private int quantity;
+    private int size;
     private double price;
 
     public OrderDetail() {
-    }
-
-    public OrderDetail(int oid, int pid, int quantity, double price) {
-        this.oid = oid;
-        this.pid = pid;
-        this.quantity = quantity;
-        this.price = price;
     }
 
     public int getOid() {
@@ -48,6 +42,14 @@ public class OrderDetail {
         this.quantity = quantity;
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -55,5 +57,15 @@ public class OrderDetail {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public OrderDetail(int oid, int pid, int quantity, int size, double price) {
+        this.oid = oid;
+        this.pid = pid;
+        this.quantity = quantity;
+        this.size = size;
+        this.price = price;
+    }
+
+    
     
 }

@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
         DAO dao = new DAO();
         Account a = dao.login(user, pass);
         if(a == null){
-            request.setAttribute("mess", "Wrong username or pass");
+            request.setAttribute("mess", "<i class=\"fa-sharp fa-solid fa-triangle-exclamation\"></i> Sai tên đăng nhập hoặc mật khẩu!");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }else{
             HttpSession session = request.getSession();

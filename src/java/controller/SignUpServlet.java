@@ -37,16 +37,25 @@ public class SignUpServlet extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         String repass = request.getParameter("repass");
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
         if(!pass.equals(repass)){
-            response.sendRedirect("login.jsp");
+            request.setAttribute("messpass", "<i class=\"fa-sharp fa-solid fa-triangle-exclamation\"></i> Mật khẩu không trùng khớp!");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
         }else{
             DAO dao = new DAO();
             Account a = dao.checkAccountExist(user);
             if(a == null){
-                dao.signup(user, pass);
-                response.sendRedirect("home");
+                dao.signup(user, pass, name, phone);
+                request.setAttribute("alert", "<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n" +
+"    <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>\n" +
+"    <script>     \n" +
+"            swal(\"Good job!\", \"Đăng ký thành công!\", \"success\");\n" +
+"    </script>");
+                request.getRequestDispatcher("signup.jsp").forward(request, response);
             }else{
-                response.sendRedirect("login.jsp");
+                request.setAttribute("messuser", "<i class=\"fa-sharp fa-solid fa-triangle-exclamation\"></i> Tên đăng nhập đã có rồi!");
+                request.getRequestDispatcher("signup.jsp").forward(request, response);
             }
         }
     }

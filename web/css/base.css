@@ -1,7 +1,7 @@
 :root{
     --text-color: #5b5b5b;
     --navbar-height: 29px;
-    --header-height: 110px;
+    --header-height: 120px;
     --search-height: calc(var(--header-height) - var(--navbar-height));
 }
 
@@ -33,12 +33,6 @@ html{
     padding-left: 5px;
     padding-right: 5px;
     width: 16.6667%;
-}
-
-.grid__column-1{
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 8.3333%;
 }
 
 .grid__column-5{
@@ -110,7 +104,7 @@ html{
     display: block;
     text-decoration: none;
     color: #939393;
-    width: 42px;
+    width: 44px;
     line-height: 38px;
     text-align: center;
     border-radius: 2px;

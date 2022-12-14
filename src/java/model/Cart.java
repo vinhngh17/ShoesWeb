@@ -22,6 +22,14 @@ public class Cart {
     public Cart(List<Item> items) {
         this.items = items;
     }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
     
     private Item getItemById(int id){
         for(Item i : items){
@@ -32,24 +40,51 @@ public class Cart {
         return null;
     }
     
-    public int getQuantityById(int id){
-        return getItemById(id).getQuantity();
+    private Item getItemByIdSize(int id, int size){
+        Item n = new Item();
+        for(Item s : this.items){
+           if(s.getProduct().getId() == id && s.getSize() == size){
+               n = s;
+           }
+       }
+       return n;
+    }
+    
+    public int getQuantityById_Size(int id, int size){
+        Item n = new Item();
+        for(Item s : this.items){
+           if(s.getProduct().getId() == id && s.getSize() == size){
+               n = s;
+           }
+       }
+       return n.getQuantity();
     }
     
     public void addItem(Item t){
         // da co o cart 
-        if(getItemById(t.getProduct().getId()) != null){
-            Item i = getItemById(t.getProduct().getId());
-            i.setQuantity(i.getQuantity() + t.getQuantity());
-        }else{
+        Item n = new Item();
+       for(Item s : this.items){
+           if(s.getProduct().getId() == t.getProduct().getId() && s.getSize() == t.getSize()){
+               n = s;
+           }
+       }
+        if(getItemById(t.getProduct().getId()) != null && n.getSize() == t.getSize()){
+                Item i = getItemByIdSize(t.getProduct().getId(), t.getSize());
+                i.setQuantity(i.getQuantity() + t.getQuantity());
+        }
+        else{
             //chua co trong cart
             items.add(t);
         }
     }
     
-    public void removeItem(int id){
-        if(getItemById(id) != null){
-            items.remove(getItemById(id));
+    public int getSize(){
+        return this.items.size();
+    }
+    
+    public void removeItem(int id, int size){
+        if(getItemByIdSize(id, size) != null){
+            items.remove(getItemByIdSize(id, size));
         }   
     }
     

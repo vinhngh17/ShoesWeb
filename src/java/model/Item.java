@@ -13,14 +13,15 @@ public class Item {
     private Product product;
     private int quantity;
     private double price;
-
+    private int size;
     public Item() {
     }
 
-    public Item(Product product, int quantity, double price) {
+    public Item(Product product, int quantity, double price, int size) {
         this.product = product;
         this.quantity = quantity;
         this.price = price;
+        this.size = size;
     }
 
     public Product getProduct() {
@@ -46,6 +47,16 @@ public class Item {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+   
     
     
 }

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,14 +21,13 @@
 
 <body>
     <div class="wrapper">
-        
         <!--Header-->
         <jsp:include page="header.jsp"></jsp:include>
         
         <!-- Big image -->
         <div class="big-img">
             <div class="grid">
-                <img class="big-img-src" src="img/47581.jpg" />
+                <img class="big-img-src" src="https://as2.ftcdn.net/v2/jpg/03/83/82/35/1000_F_383823517_aqubmITTeyazMtApMLV7grhTObkzKphk.jpg" />
             </div>
         </div>
         
@@ -55,8 +55,8 @@
                         <div class="home-bar">
                             <div class="home-bar-item">
                                 <ul class="home-bar-pagination">
-                                    <li class="home-bar-pagination-item">
-                                        <a href="" class="home-bar-pagination-item-link">
+                                    <li class="home-bar-pagination-icon">
+                                        <a href="" class="home-bar-pagination-icon-link">
                                             <i class="home-bar-pagination-item-icon fa-solid fa-angle-left"></i>
                                         </a>
                                     </li>
@@ -70,8 +70,8 @@
                                         <a href="" class="home-bar-pagination-item-link">3</a>
                                     </li>
 
-                                    <li class="home-bar-pagination-item">
-                                        <a href="" class="home-bar-pagination-item-link">
+                                    <li class="home-bar-pagination-icon">
+                                        <a href="" class="home-bar-pagination-icon-link">
                                             <i class="home-bar-pagination-item-icon fa-solid fa-angle-right"></i>
                                         </a>
                                     </li>
@@ -96,8 +96,14 @@
                                             </div>
                                             <h4 class="home-product-item-name">${o.name}</h4>
                                             <div class="home-product-item-price">
-                                                <div class="home-product-item-pricenew">${o.price}đ</div>
-                                                <div class="home-product-item-priceold">${o.price}đ</div>
+                                                <div class="home-product-item-pricenew">
+                                                    <c:set var ="balance" value = "${o.price}" />
+                                                    <fmt:formatNumber type="number" pattern = "###,###" value = "${balance}" />đ
+                                                </div>
+                                                <div class="home-product-item-priceold">
+                                                    <c:set var ="balance" value = "${o.price}" />
+                                                    <fmt:formatNumber type="number" pattern = "###,###" value = "${balance}" />đ
+                                                </div>
                                             </div>
                                             <div class="home-product-item-sale">
                                                 <span class="home-product-item-sale-percent">-10%</span>
@@ -111,7 +117,7 @@
                         </div>
 
                         <ul class="pagination home-product-pagination">
-                            <li class="pagination-item">
+                            <li class="pagination-icon">
                                 <a href="" class="pagination-item-link">
                                     <i class="pagination-item-icon fa-solid fa-angle-left"></i>
                                 </a>
@@ -125,7 +131,7 @@
                             <li class="pagination-item">
                                 <a href="" class="pagination-item-link">3</a>
 
-                            <li class="pagination-item">
+                            <li class="pagination-icon">
                                 <a href="" class="pagination-item-link">
                                     <i class="pagination-item-icon fa-solid fa-angle-right"></i>
                                 </a>
@@ -140,6 +146,15 @@
         <!--Footer-->
         <jsp:include page="footer.jsp"></jsp:include>
     </div>
+    <script>
+            let div = document.getElementsByClassName("category-item-link");
+
+            for(let i = 0; i < div.length; i++){
+                if((i + 1) == ${cateID}){
+                    div[i].style.color = "#ee4d2d";
+                }
+            }
+    </script>
 </body>
 
 </html>

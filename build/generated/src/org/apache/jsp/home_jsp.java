@@ -73,7 +73,6 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<body>\n");
       out.write("    <div class=\"wrapper\">\n");
-      out.write("        \n");
       out.write("        <!--Header-->\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "header.jsp", out, false);
@@ -82,7 +81,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <!-- Big image -->\n");
       out.write("        <div class=\"big-img\">\n");
       out.write("            <div class=\"grid\">\n");
-      out.write("                <img class=\"big-img-src\" src=\"img/47581.jpg\" />\n");
+      out.write("                <img class=\"big-img-src\" src=\"https://as2.ftcdn.net/v2/jpg/03/83/82/35/1000_F_383823517_aqubmITTeyazMtApMLV7grhTObkzKphk.jpg\" />\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("        \n");
@@ -109,8 +108,8 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\"home-bar\">\n");
       out.write("                            <div class=\"home-bar-item\">\n");
       out.write("                                <ul class=\"home-bar-pagination\">\n");
-      out.write("                                    <li class=\"home-bar-pagination-item\">\n");
-      out.write("                                        <a href=\"\" class=\"home-bar-pagination-item-link\">\n");
+      out.write("                                    <li class=\"home-bar-pagination-icon\">\n");
+      out.write("                                        <a href=\"\" class=\"home-bar-pagination-icon-link\">\n");
       out.write("                                            <i class=\"home-bar-pagination-item-icon fa-solid fa-angle-left\"></i>\n");
       out.write("                                        </a>\n");
       out.write("                                    </li>\n");
@@ -124,8 +123,8 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                        <a href=\"\" class=\"home-bar-pagination-item-link\">3</a>\n");
       out.write("                                    </li>\n");
       out.write("\n");
-      out.write("                                    <li class=\"home-bar-pagination-item\">\n");
-      out.write("                                        <a href=\"\" class=\"home-bar-pagination-item-link\">\n");
+      out.write("                                    <li class=\"home-bar-pagination-icon\">\n");
+      out.write("                                        <a href=\"\" class=\"home-bar-pagination-icon-link\">\n");
       out.write("                                            <i class=\"home-bar-pagination-item-icon fa-solid fa-angle-right\"></i>\n");
       out.write("                                        </a>\n");
       out.write("                                    </li>\n");
@@ -151,7 +150,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        </div>\n");
       out.write("\n");
       out.write("                        <ul class=\"pagination home-product-pagination\">\n");
-      out.write("                            <li class=\"pagination-item\">\n");
+      out.write("                            <li class=\"pagination-icon\">\n");
       out.write("                                <a href=\"\" class=\"pagination-item-link\">\n");
       out.write("                                    <i class=\"pagination-item-icon fa-solid fa-angle-left\"></i>\n");
       out.write("                                </a>\n");
@@ -165,7 +164,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <li class=\"pagination-item\">\n");
       out.write("                                <a href=\"\" class=\"pagination-item-link\">3</a>\n");
       out.write("\n");
-      out.write("                            <li class=\"pagination-item\">\n");
+      out.write("                            <li class=\"pagination-icon\">\n");
       out.write("                                <a href=\"\" class=\"pagination-item-link\">\n");
       out.write("                                    <i class=\"pagination-item-icon fa-solid fa-angle-right\"></i>\n");
       out.write("                                </a>\n");
@@ -182,6 +181,17 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "footer.jsp", out, false);
       out.write("\n");
       out.write("    </div>\n");
+      out.write("    <script>\n");
+      out.write("            let div = document.getElementsByClassName(\"category-item-link\");\n");
+      out.write("\n");
+      out.write("            for(let i = 0; i < div.length; i++){\n");
+      out.write("                if((i + 1) == ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cateID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("){\n");
+      out.write("                    div[i].style.color = \"#3dc8f6\";\n");
+      out.write("                }\n");
+      out.write("            }\n");
+      out.write("    </script>\n");
       out.write("</body>\n");
       out.write("\n");
       out.write("</html>");

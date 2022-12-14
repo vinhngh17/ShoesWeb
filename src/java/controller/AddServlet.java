@@ -43,10 +43,9 @@ public class AddServlet extends HttpServlet {
         String category = request.getParameter("category");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int sid = a.getId();
         
         DAO dao = new DAO();
-        dao.insertProduct(name, image, price, cname, category, sid);
+        dao.insertProduct(name, image, price, cname, category);
         response.sendRedirect("manager");
     }
 

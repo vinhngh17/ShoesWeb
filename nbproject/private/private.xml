@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>web/home.jsp</url>
+            <bookmark id="2">
+                <name/>
+                <line>2</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>web/cart.jsp</url>
+            <bookmark id="1">
+                <name/>
+                <line>122</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nguyen%20Phu%20Vinh/OneDrive/Documents/NetBeansProjects/ShoesWeb/web/css/main.css</file>
+            <file>file:/C:/Users/Nguyen%20Phu%20Vinh/OneDrive/Documents/NetBeansProjects/ShoesWeb/web/detail.jsp</file>
+            <file>file:/C:/Users/Nguyen%20Phu%20Vinh/OneDrive/Documents/NetBeansProjects/ShoesWeb/web/cart.jsp</file>
+            <file>file:/C:/Users/Nguyen%20Phu%20Vinh/OneDrive/Documents/NetBeansProjects/ShoesWeb/web/managerorder.jsp</file>
+            <file>file:/C:/Users/Nguyen%20Phu%20Vinh/OneDrive/Documents/NetBeansProjects/ShoesWeb/web/home.jsp</file>
+            <file>file:/C:/Users/Nguyen%20Phu%20Vinh/OneDrive/Documents/NetBeansProjects/ShoesWeb/web/managerodetail.jsp</file>
         </group>
     </open-files>
 </project-private>
